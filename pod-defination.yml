@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sametimeapp
+  labels:
+    app: sametime-javaapp
+spec:
+  containers:
+    -
+      image: amitdthakur/sametimeapp
+      name: sametimeapp-container
