@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-sametime
+  labels:
+    app: deployment-sametime-app
+spec:
+  template:
+    metadata:
+      name: sametimeapp
+      labels:
+        app: sametime-javaapp-app
+        type: sametime-javaapp
+    spec:
+      containers:
+        - image: amitdthakur/sametimeapp
+          name: sametimeapp-container
+  replicas: 3
+  selector:
+    matchLabels:
+      type: sametime-javaapp
