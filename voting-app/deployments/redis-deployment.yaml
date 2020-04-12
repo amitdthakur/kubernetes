@@ -12,9 +12,8 @@ spec:
     name: redis-pod
   replicas: 1
   selector:
-    matchLabels:
-      app: demo-voting-app
-      name: redis-pod
+    app: demo-voting-app
+    name: redis-pod
   spec:
     containers:
       -
