@@ -5,20 +5,19 @@ metadata:
     app: redis
   name: redis-deployment
 spec:
-  metadata:
-    labels:
-      app: demo-voting-app
-      name: redis-pod
-    name: redis-pod
   replicas: 1
   selector:
     app: demo-voting-app
     name: redis-pod
-  spec:
-    containers:
-      -
-        image: redis
+  template:
+    metadata:
+      labels:
+        app: demo-voting-app
         name: redis-pod
-        ports:
-          -
-            containerPort: 6379
+      name: redis-pod
+    spec:
+      containers:
+        - image: redis
+          name: redis-pod
+          ports:
+            - containerPort: 6379
